@@ -1,0 +1,18 @@
+[
+  {
+    "outputFileName": "wwwroot/css/all.min.css",
+    "inputFiles": [
+      "wwwroot/lib/AdminLTE-master/plugins/fontawesome-free/css/all.min.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/all.min.js",
+    "inputFiles": [
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]
