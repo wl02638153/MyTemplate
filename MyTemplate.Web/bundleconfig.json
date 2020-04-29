@@ -1,18 +1,44 @@
 [
   {
-    "outputFileName": "wwwroot/css/all.min.css",
-    "inputFiles": [
-      "wwwroot/lib/AdminLTE-master/plugins/fontawesome-free/css/all.min.css"
-    ]
-  },
-  {
     "outputFileName": "wwwroot/js/all.min.js",
     "inputFiles": [
+      //#region for AdminLTE-master template js
+      "wwwroot/lib/plugins/jquery/jquery.min.js",
+      "wwwroot/lib/plugins/jquery-ui/jquery-ui.min.js",
+      "wwwroot/lib/plugins/bootstrap/js/bootstrap.bundle.min.js",
+      "wwwroot/lib/plugins/chart.js/Chart.min.js",
+      "wwwroot/lib/plugins/sparklines/sparkline.js",
+      "wwwroot/lib/plugins/jqvmap/jquery.vmap.min.js",
+      "wwwroot/lib/plugins/jqvmap/maps/jquery.vmap.usa.js",
+      "wwwroot/lib/plugins/jquery-knob/jquery.knob.min.js",
+      "wwwroot/lib/plugins/moment/moment.min.js",
+      "wwwroot/lib/plugins/daterangepicker/daterangepicker.js",
+      "wwwroot/lib/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js",
+      "wwwroot/lib/plugins/summernote/summernote-bs4.min.js",
+      "wwwroot/lib/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js",
+      "wwwroot/lib/dist/js/adminlte.js",
+      "wwwroot/lib/dist/js/pages/dashboard.js"
+      //#endregion
     ],
     "minify": {
-      "enabled": true,
+      "enabled": false,
       "renameLocals": true
     },
     "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/css/all.min.css",
+    "inputFiles": [
+      //#region for AdminLTE-master template css
+      "wwwroot/lib/AdminLTE-master/plugins/fontawesome-free/css/all.min.css",
+      "wwwroot/lib/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css",
+      "wwwroot/lib/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
+      "wwwroot/lib/plugins/jqvmap/jqvmap.min.css",
+      "wwwroot/lib/dist/css/adminlte.min.css",
+      "wwwroot/lib/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
+      "wwwroot/lib/plugins/daterangepicker/daterangepicker.css",
+      "wwwroot/lib/plugins/summernote/summernote-bs4.css"
+      //#endregion
+    ]
   }
 ]
