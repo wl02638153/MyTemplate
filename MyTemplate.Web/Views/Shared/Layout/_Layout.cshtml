@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyTemplate.Web</title>
+    @{
+        await Html.RenderPartialAsync("~/Views/Shared/PartailView/_CommonJS.cshtml");
+    }
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div id="Navbar">
+        @await Component.InvokeAsync("Navbar")
+    </div>
+    <div id="Sidebar">
+        @await Component.InvokeAsync("Sidebar")
+    </div>
+    <div class="content-wrapper">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

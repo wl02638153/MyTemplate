@@ -17,24 +17,26 @@ namespace MyTemplate.DAL.Entities.Base
 		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		[Column("SeqId")]
 		public long Id { get; set; }
+
 		/// <summary>
 		/// 建立時間
 		/// </summary>
+		/// 
 		[Column("CreateDate")]
-		public DateTime CreationTime { get; set; }
+		public DateTime CreationTime { get; set; } = DateTime.Now;
 
 		/// <summary>
 		/// 建立使用者代碼
 		/// </summary>
 		[Required]
 		[MaxLength(100)]
-		public string CreateUser { get; set; }
+		public string CreateUser { get; set; } = "System";
 
 		/// <summary>
 		/// 更新時間
 		/// </summary>
 		[Column("ModifyDate")]
-		public DateTime? LastModificationTime { get; set; }
+		public DateTime? LastModificationTime { get; set; } = DateTime.Now;
 
 		/// <summary>
 		/// 更新使用者代碼

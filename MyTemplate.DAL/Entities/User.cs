@@ -7,14 +7,28 @@ using System.Text;
 
 namespace MyTemplate.DAL.Entities
 {
-    public class PersonType : BaseEntity
+    public class User: BaseEntity
     {
-
         [Required]
         public Guid rowguid { get; set; }
 
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
+
+        [Required]
+        public DateTime Birthday { get; set; }
+
+        [Required]
+        public string Password { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        [EmailAddress]
+        public string EmailAddress { get; set; }
+
+        [Required]
+        [Phone]
+        public string PhoneNumber { get; set; }
     }
 }

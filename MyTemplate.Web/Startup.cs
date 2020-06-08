@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,7 +30,8 @@ namespace MyTemplate.Web
             // 設定 DbContext 的連線設定
             services.AddDbContext<MyTemplate.DAL.MyTemplateDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("Default"));
+                //options.UseSqlServer(Configuration.GetConnectionString("Default"));
+                options.UseSqlServer(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("MyTemplate.Web"));
             });
         }
 
@@ -48,12 +50,14 @@ namespace MyTemplate.Web
             }
             // 建立資料庫 
             dbContext.Database.EnsureCreated();
+            //TestData.Initialize(dbContext);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
+            //app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
