@@ -24,6 +24,7 @@ namespace MyTemplate.Web.Controllers
         }
         public IActionResult Product()
         {
+            
             return View();
         }
     }

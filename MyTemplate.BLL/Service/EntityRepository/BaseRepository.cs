@@ -1,6 +1,7 @@
 ﻿using MyTemplate.DAL;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace MyTemplate.BLL.Service.EntityRepository
         Task Delete(string id);
 
         Task<T> GetById(string id);
+        Task<IEnumerable<T>> GetAll();
 
         //Task<IEnumerable<T>> Find(Expression<Func<T, bool>> expression);
     }
@@ -44,7 +46,10 @@ namespace MyTemplate.BLL.Service.EntityRepository
         {
             throw new NotImplementedException();
         }
-
+        public async Task<IEnumerable<T>> GetAll()
+        {
+            return _context.Set<T>();
+        }
         public async Task<T> GetById(string id)
         {
             return await _context.FindAsync<T>(id);
