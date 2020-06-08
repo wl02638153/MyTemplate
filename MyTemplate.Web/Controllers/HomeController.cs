@@ -15,13 +15,8 @@ namespace MyTemplate.Web.Controllers
     //[Authorize]
     public class HomeController : BaseController<HomeController>
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly MyTemplateDbContext _context;
-
-        public HomeController(ILogger<HomeController> logger, MyTemplateDbContext context)
+        public HomeController(ILogger<HomeController> logger, MyTemplateDbContext context) : base(logger, context)
         {
-            _logger = logger;
-            _context = context;
         }
 
         public IActionResult Index()

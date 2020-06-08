@@ -23,7 +23,8 @@
       "wwwroot/lib/AdminLTE-master/plugins/datatables-responsive/js/responsive.bootstrap4.min.js",
       "wwwroot/lib/AdminLTE-master/dist/js/adminlte.js",
       "wwwroot/lib/AdminLTE-master/dist/js/pages/dashboard.js",
-      "wwwroot/lib/AdminLTE-master/dist/js/demo.js"
+      "wwwroot/lib/AdminLTE-master/dist/js/demo.js",
+      "wwwroot/lib/Vuejs/vue.js"
       //#endregion
     ],
     "minify": {

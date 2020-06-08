@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace MyTemplate.BLL.Service.EntityRepository
 {
-    public interface IBaseRepository<T, TKey> where T : class
+    public interface IBaseRepository<T> where T : class
     {
         Task<T> Create(T entity);
 
-        //Task Update(T entity);
+        Task Update(T entity);
 
-        //Task Delete(TKey id);
+        Task Delete(string id);
 
-        //Task<T> FindById(TKey id);
+        Task<T> GetById(string id);
 
         //Task<IEnumerable<T>> Find(Expression<Func<T, bool>> expression);
     }
     
-    public class BaseRepository<T, TKey> : IBaseRepository<T, TKey> where T : class
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         private readonly MyTemplateDbContext _context;
 
@@ -35,20 +35,20 @@ namespace MyTemplate.BLL.Service.EntityRepository
             return entity;
         }
 
-        //public async Task Delete(TKey id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task Delete(string id)
+        {
+            throw new NotImplementedException();
+        }
 
-        //public async Task<IEnumerable<T>> Find(Expression<Func<T, bool>> expression)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task<IEnumerable<T>> Find(Expression<Func<T, bool>> expression)
+        {
+            throw new NotImplementedException();
+        }
 
-        //public async Task<T> FindById(TKey id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task<T> GetById(string id)
+        {
+            return await _context.FindAsync<T>(id);
+        }
 
         public async Task Update(T entity)
         {
