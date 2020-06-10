@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyTemplate.BLL.Service.ControllerService;
 using MyTemplate.BLL.Service.EntityRepository;
 using MyTemplate.DAL;
 using MyTemplate.DAL.Entities;
@@ -30,7 +31,11 @@ namespace MyTemplate.Web
         {
             services.AddControllersWithViews();
 
-            services.AddScoped<IBaseRepository<Product>, ProductRepository>();
+            //services.AddScoped<IRepository<Product>, ProductRepository>();
+            services.AddScoped<IRepository<Product>, Repository<Product>>();
+            services.AddScoped<IRepository<User>, Repository<User>>();
+
+            services.AddScoped<IDashboardService, DashboardService>();
 
             // 設定 DbContext 的連線設定
             services.AddDbContext<MyTemplate.DAL.MyTemplateDbContext>(options =>

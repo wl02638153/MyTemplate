@@ -21,8 +21,4 @@
     <ProjectReference Include="..\MyTemplate.DAL\MyTemplate.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Service\ControllerService\" />
-  </ItemGroup>
-
 </Project>

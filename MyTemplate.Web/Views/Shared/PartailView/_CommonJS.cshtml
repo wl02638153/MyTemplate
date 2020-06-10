@@ -3,7 +3,25 @@
 </environment>
 <environment include="Development,Staging,Production">
     <script src="~/js/all.min.js" asp-append-version="true"></script>
+    @*<script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/AdminLTE-master/plugins/jquery-ui/jquery-ui.min.js" asp-append-version="true"></script>
+    <script src="~/lib/AdminLTE-master/plugins/bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/lib/AdminLTE-master/dist/js/adminlte.js" asp-append-version="true"></script>
+    <script src="~/lib/AdminLTE-master/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js" asp-append-version="true"></script>
+    <script src="~/lib/AdminLTE-master/dist/js/pages/dashboard.js" asp-append-version="true"></script>
+    <script src="~/lib/AdminLTE-master/dist/js/demo.js" asp-append-version="true"></script>
+    <script src="~/lib/Vuejs/vue.js" asp-append-version="true"></script>*@
 </environment>
+
+
 <script>
     
+</script>
+
+<script type="text/x-template" id="paginate-component">
+    <ul class="pagination pagination-sm m-0 float-right">
+        <li v-bind:class="{'disabled' : (Page===1)}" class="page-item" v-on:click="setPage(Page-1,Size)"><a class="page-link" href="#">&laquo;</a></li>
+        <li v-for="n in PageCount" v-bind:class="{'active':(Page===(n))}" class="page-item" v-on:click="setPage(n,Size)"><a class="page-link" href="#">{{n}}</a></li>
+        <li v-bind:class="{'disabled' : (Page===PageCount)}" class="page-item" v-on:click="setPage(Page+1,Size)"><a class="page-link" href="#">&raquo;</a></li>
+    </ul>
 </script>

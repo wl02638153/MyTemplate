@@ -17,16 +17,12 @@ namespace MyTemplate.Web.Controllers
     //[Authorize]
     public class HomeController : BaseController<HomeController>
     {
-        private readonly IBaseRepository<Product> _productRep;
-        public HomeController(ILogger<HomeController> logger, MyTemplateDbContext context, IBaseRepository<Product> productRep) : base(logger, context)
+        public HomeController(ILogger<HomeController> logger, MyTemplateDbContext context) : base(logger, context)
         {
-            _productRep = productRep;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var test=_context.Set<Product>();
-            var test2 = _productRep.GetAll();
             return View();
         }
         

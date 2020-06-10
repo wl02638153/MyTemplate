@@ -2,30 +2,14 @@
   {
     "outputFileName": "wwwroot/js/all.min.js",
     "inputFiles": [
+      "wwwroot/lib/Vuejs/vue.js",
       "wwwroot/lib/jquery/dist/jquery.min.js",
-      //#region for AdminLTE-master template js
-      "wwwroot/lib/AdminLTE-master/plugins/jquery/jquery.min.js",
       "wwwroot/lib/AdminLTE-master/plugins/jquery-ui/jquery-ui.min.js",
       "wwwroot/lib/AdminLTE-master/plugins/bootstrap/js/bootstrap.bundle.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/chart.js/Chart.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/sparklines/sparkline.js",
-      "wwwroot/lib/AdminLTE-master/plugins/jqvmap/jquery.vmap.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/jqvmap/maps/jquery.vmap.usa.js",
-      "wwwroot/lib/AdminLTE-master/plugins/jquery-knob/jquery.knob.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/moment/moment.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/daterangepicker/daterangepicker.js",
-      "wwwroot/lib/AdminLTE-master/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/summernote/summernote-bs4.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/datatables/jquery.dataTables.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/datatables-responsive/js/dataTables.responsive.min.js",
-      "wwwroot/lib/AdminLTE-master/plugins/datatables-responsive/js/responsive.bootstrap4.min.js",
       "wwwroot/lib/AdminLTE-master/dist/js/adminlte.js",
-      "wwwroot/lib/AdminLTE-master/dist/js/pages/dashboard.js",
-      "wwwroot/lib/AdminLTE-master/dist/js/demo.js",
-      "wwwroot/lib/Vuejs/vue.js"
-      //#endregion
+      "wwwroot/lib/AdminLTE-master/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js",
+      //"wwwroot/lib/AdminLTE-master/dist/js/pages/dashboard.js",
+      "wwwroot/lib/AdminLTE-master/dist/js/demo.js"
     ],
     "minify": {
       "enabled": false,
@@ -47,7 +31,6 @@
       "wwwroot/lib/AdminLTE-master/plugins/summernote/summernote-bs4.css",
       "wwwroot/lib/AdminLTE-master/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css",
       "wwwroot/lib/AdminLTE-master/plugins/datatables-responsive/css/responsive.bootstrap4.min.css",
-      "wwwroot/lib/AdminLTE-master/plugins/datatables-responsive/css/responsive.bootstrap4.min.css"
       //#endregion
     ]
   }

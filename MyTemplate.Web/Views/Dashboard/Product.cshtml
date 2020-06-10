@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewData["Title"] = "ProductList";
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Validation</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Validation</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div id="Table" class="card">
+                <div class="card-header">
+                    <h3 class="card-title">DataTable with default features</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                                <th>category</th>
+                                <th>createUser</th>
+                                <th>creationTime</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in Products">
+                                <td>{{item.id}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.category}}</td>
+                                <td>{{item.createUser}}</td>
+                                <td>{{item.creationTime}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer clearfix">
+                    <ul class="pagination pagination-sm m-0 float-right">
+                        <li v-bind:class="{'disabled' : (Page===1)}" class="page-item" v-on:click="setPage(Page-1,Size)"><a class="page-link" href="#">&laquo;</a></li>
+                        <li v-for="n in PageCount" v-bind:class="{'active':(Page===(n))}" class="page-item" v-on:click="setPage(n,Size)"><a class="page-link" href="#">{{n}}</a></li>
+                        <li v-bind:class="{'disabled' : (Page===PageCount)}" class="page-item" v-on:click="setPage(Page+1,Size)"><a class="page-link" href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    Vue.component('paginate-component', {
+        data: {
+            Products: [],
+            Page: '',
+            PageCount:'',
+            Size:'',
+            Total:''
+        },
+        template:'#paginate-component'
+    });
+    function GetAll(Page,Size) {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("ProductList", "Dashboard")",
+            data: {page:Page,size:Size},
+            success: function (response) {
+                Table.Products = response.data;
+                Table.Page = response.paginate.page;
+                Table.PageCount = response.paginate.pageConut;
+                Table.Size = response.paginate.size;
+                Table.Total = response.paginate.total;
+                console.log(response.paginate);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        var startPageIndex = 1;
+        var eachPageNum = 10;
+        GetAll(startPageIndex, eachPageNum);
+        
+    });
+    var Table=new Vue({
+        el:'#Table',
+        data: {
+            Products: [],
+            Page: '',
+            PageCount:'',
+            Size:'',
+            Total:''
+        },
+        methods:{
+            setPage: function (Page,Size) {
+                GetAll(Page, Size);
+            }
+        }
+    });
+    
+</script>
